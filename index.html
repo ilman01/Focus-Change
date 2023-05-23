@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Focus Change Detector Mockup</h1>
+    <h3>Made by Ilman</h3>
+    <p id="text1">Welcome to the cheat detector mockup made by Ilman. This page will detect if you lost focus on your browser.</p>
+    <p id="text2">Selamat datang di mockup pendeteksi cheat yang dibuat oleh Ilman. Halaman ini akan mendeteksi jika Anda kehilangan fokus pada browser Anda.</p>
+    <button id="refbutton" style="display: none;" onClick="window.location.reload();">Try Again / Coba Lagi</button>
+
+    <script>
+        function detected() {
+            document.getElementById("text1").innerHTML = "FOCUS CHANGE DETECTED!!!";
+            document.getElementById("text2").innerHTML = "PERGANTIAN FOKUS TERDETEKSI!!!";
+            document.getElementById("text1").style.color = 'red'
+            document.getElementById("text2").style.color = 'red'
+            document.getElementById("refbutton").style.display = "block"
+        }
+
+        
+        function notFocused() {
+            detected();
+        }
+        window.addEventListener('blur', notFocused);
+
+
+        const handleVisibilityChange = function() {
+            detected();
+        }
+        document.addEventListener("visibilitychange", handleVisibilityChange);
+    </script>
+</body>
+</html>
