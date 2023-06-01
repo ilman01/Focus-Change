@@ -27,7 +27,23 @@
         function notFocused() {
             detected();
         }
+
         window.addEventListener('blur', notFocused);
+
+        window.addEventListener('freeze', notFocused);
+
+        window.addEventListener('offline', notFocused);
+
+        window.addEventListener('resume', notFocused);
+
+        window.addEventListener('unload', notFocused);
+
+        window.addEventListener('beforeunload', notFocused);
+
+        window.addEventListener('pagehide', notFocused);
+
+        window.addEventListener('focusout', notFocused);
+
 
 
         const handleVisibilityChange = function() {
